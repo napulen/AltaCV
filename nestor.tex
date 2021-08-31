@@ -75,15 +75,15 @@
 %% Use (and optionally edit if necessary) this .cfg if you
 %% want to use an author-year reference style like APA(6)
 %% for your publication list
-\input{pubs-authoryear.cfg}
+% \input{pubs-authoryear.cfg}
 
 %% Use (and optionally edit if necessary) this .cfg if you
 %% want an originally numerical reference style like IEEE
 %% for your publication list
-% \input{pubs-num.cfg}
+\input{pubs-num.cfg}
 
 %% sample.bib contains your publications
-\addbibresource{sample.bib}
+\addbibresource{nestor.bib}
 
 \begin{document}
 \name{N\'estor N\'apoles L\'opez}
@@ -144,15 +144,14 @@ Nowadays, I spend my time using technology to democratize the access to music ed
 \cvsection{Experience}
 
 \cvevent{PhD Casual Research Assistant}{Distributed Digital Music Archives and Libraries Lab}{September 2017 -- Ongoing}{Montr\'eal, Qu\'ebec}
-I research on computational methods to explore tonal music, namely:
+My research focuses on:
 \begin{itemize}
-    \item Automatic Roman numeral analysis \cite{napoles_lopez_augmentednet_2021, napoles_lopez_harmalysis_2020}
-    \item Automatic key estimation \cite{napoles_lopez_key-finding_2019, napoles_lopez_local_2020}
-    \item Evaluation of symbolic music formats \cite{napoles_lopez_encoding_2018, napoles_lopez_effects_2019}
-    \item Gamification of musicianship and music theory \cite{napoles_lopez_-re-myth_2020, napoles_lopez_dandelot_2019}
+    \item The syntax \parencite{napoles_lopez_harmalysis_2020} and automatic computation of Roman numeral analysis \parencite{napoles_lopez_augmentednet_2021}, \textbf{which is the topic of my PhD dissertation}
+    \item Automatic key estimation \parencite{napoles_lopez_key-finding_2019, napoles_lopez_local_2020}
+    \item Evaluation of symbolic music formats \parencite{napoles_lopez_encoding_2018, napoles_lopez_effects_2019}
+    \item Gamification of musicianship and music theory exercises \parencite{napoles_lopez_-re-myth_2020, napoles_lopez_dandelot_2019}
 \end{itemize}
-For my dissertation, my focus is on automatic Roman numeral analysis using deep neural networks.
-As a research assistant for DDMAL, I contribute to the django-based Cantus Ultimus website, train new hires regarding good version control practices, and support the cloud infrastructure of the lab within the Compute Canada service.
+As a research assistant for DDMAL, I maintain the django-based \emph{Cantus Ultimus} website, train new hires on version control, and support the cloud infrastructure of the lab within Compute Canada.
 
 \medskip
 
@@ -170,8 +169,8 @@ In 2015, I co-authored a conference presentation about API-Injection techniques 
 \medskip
 
 \cvevent{Lead Software Developer}{CINVESTAV / Modutram}{January 2014 -- September 2014}{Guadalajara, M\'exico}
-C++ developer for an intelligent public-transportation startup. 
-I was the main dev of a traffic simulation suite written in C++, Qt and OpenGL.
+C++ developer for a public-transportation startup. 
+I was the main developer of a traffic simulation suite written in C++, Qt, and OpenGL.
 
 \medskip
 
@@ -197,13 +196,15 @@ Writing scripts and software tools (mostly in Python and Bash) for the automatic
 
 \cvsection{Publications}
 
+\nocite{*}
+
 \printbibliography[heading=pubtype,title={\printinfo{\faUserGraduate}{Thesis}},keyword=mypublications\_thesis]
 
 % \divider
 
 \printbibliography[heading=pubtype,title={\printinfo{\faBookOpen}{Peer-Reviewed Conference with Proceedings}},keyword=mypublications\_proceedings]
 
-\divider
+% \divider
 
 \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Peer-Reviewed Conference without Proceedings}},keyword=mypublications\_noproceedings]
 
@@ -218,7 +219,7 @@ Provisional thesis title: \emph{Multitask tonal analysis in symbolic music repre
 \medskip
 
 {\faGraduationCap} \cvevent{MSc in Sound and Music Computing}{Universitat Pompeu Fabra. Barcelona, Spain}{September 2016 -- September 2017}{}
-Thesis: \emph{Automatic Harmonic Analysis of Classical String Quartets from Symbolic Score}~\cite{napoles_lopez_automatic_2017}.
+Thesis: \emph{Automatic Harmonic Analysis of Classical String Quartets from Symbolic Score}~\parencite{napoles_lopez_automatic_2017}.
 
 \medskip
 
