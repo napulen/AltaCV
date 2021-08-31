@@ -1,0 +1,285 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.2, 28 Aug 2021) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{DarkBlue}{HTML}{000044}
+\definecolor{MiddleBlue}{HTML}{1B4F72}
+\definecolor{LightBlue}{HTML}{2E86C1}
+\definecolor{DarkBrown}{HTML}{3F2A14}
+
+\colorlet{name}{SlateGrey}
+\colorlet{tagline}{LightGrey}
+\colorlet{heading}{LightBlue}
+\colorlet{headingrule}{LightBlue}
+% \colorlet{subheading}{LightBlue}
+\colorlet{accent}{MiddleBlue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{N\'estor N\'apoles L\'opez}
+\tagline{PhD Candidate in Music Technology}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \homepage{napulen.github.io}
+  \email{napulen@gmail.com}
+  \twitter{@napulen}
+  \github{napulen}
+%   \linkedin{your_id}
+  \location{Montr\'eal, QC}
+  \phone{+1 438-979-1473}
+%   \mailaddress{Åddrésş, Street, 00000 Cóuntry}
+%   \orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{About me}
+\begin{quote}
+I am a computational music theorist with a strong passion for tonal music.
+As a young person, I yearned to learn the basics of music theory.
+Nowadays, I spend my time using technology to democratize the access to music education.
+\end{quote}
+
+\cvsection{Experience}
+
+\cvevent{PhD Casual Research Assistant}{Distributed Digital Music Archives and Libraries Lab}{September 2017 -- Ongoing}{Montr\'eal, Qu\'ebec}
+I research on computational methods to explore tonal music, namely:
+\begin{itemize}
+    \item Automatic Roman numeral analysis \cite{napoles_lopez_augmentednet_2021, napoles_lopez_harmalysis_2020}
+    \item Automatic key estimation \cite{napoles_lopez_key-finding_2019, napoles_lopez_local_2020}
+    \item Evaluation of symbolic music formats \cite{napoles_lopez_encoding_2018, napoles_lopez_effects_2019}
+    \item Gamification of musicianship and music theory \cite{napoles_lopez_-re-myth_2020, napoles_lopez_dandelot_2019}
+\end{itemize}
+For my dissertation, my focus is on automatic Roman numeral analysis using deep neural networks.
+As a research assistant for DDMAL, I contribute to the django-based Cantus Ultimus website, train new hires regarding good version control practices, and support the cloud infrastructure of the lab within the Compute Canada service.
+
+\medskip
+
+\cvevent{MSc Research Assistant}{CompMusic}{November 2016 -- June 2017}{Barcelona, Spain}
+I annotated a dataset of Classical string quartets with \textasciitilde{}5,000 Roman numeral labels. 
+I used the data to evaluate an existing functional harmony algorithm named \emph{Melisma Music Analyzer}.
+
+\medskip
+
+\cvevent{Graphics Software Security Engineer}{Intel Corporation}{October 2014 -- August 2016}{Guadalajara, M\'exico}
+Tool development and software security analysis of 3D-graphics libraries. 
+I found and disclosed \textasciitilde{}5 medium-and-high security vulnerabilities in graphic libraries through fuzzing and API-library injection. 
+In 2015, I co-authored a conference presentation about API-Injection techniques for fuzzing graphics DLLs, in Portland, OR.
+
+\medskip
+
+\cvevent{Lead Software Developer}{CINVESTAV / Modutram}{January 2014 -- September 2014}{Guadalajara, M\'exico}
+C++ developer for an intelligent public-transportation startup. 
+I was the main dev of a traffic simulation suite written in C++, Qt and OpenGL.
+
+\medskip
+
+\cvevent{Software Validation Engineer}{CINVESTAV / Intel Corporation}{August 2013 -- January 2014}{Guadalajara, M\'exico}
+Writing scripts and software tools (mostly in Python and Bash) for the automatic validation of software and hardware components.
+
+% \cvsection{A Day of My Life}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+% \wheelchart{1.5cm}{0.5cm}{%
+%   6/8em/accent!30/{Sleep,\\beautiful sleep},
+%   3/8em/accent!40/Hopeful novelist by night,
+%   8/8em/accent!60/Daytime job,
+%   2/10em/accent/Sports and relaxation,
+%   5/6em/accent!20/Spending time with family
+% }
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+% \newpage
+
+\cvsection{Publications}
+
+\printbibliography[heading=pubtype,title={\printinfo{\faUserGraduate}{Thesis}},keyword=mypublications\_thesis]
+
+% \divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faBookOpen}{Peer-Reviewed Conference with Proceedings}},keyword=mypublications\_proceedings]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Peer-Reviewed Conference without Proceedings}},keyword=mypublications\_noproceedings]
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Education}
+{\faGraduationCap} \cvevent{PhD in Music Technology}{McGill University. Montr\'eal, Qu\'ebec}{September 2017 -- Ongoing}{}
+Provisional thesis title: \emph{Multitask tonal analysis in symbolic music representations}
+\medskip
+
+{\faGraduationCap} \cvevent{MSc in Sound and Music Computing}{Universitat Pompeu Fabra. Barcelona, Spain}{September 2016 -- September 2017}{}
+Thesis: \emph{Automatic Harmonic Analysis of Classical String Quartets from Symbolic Score}~\cite{napoles_lopez_automatic_2017}.
+
+\medskip
+
+{\faGraduationCap} \cvevent{Medium-Professional Degree in Classical Piano Performance}{National Institute of Fine Arts. Guadalajara, M\'exico}{August 2009 -- July 2013}{}
+\medskip
+
+{\faGraduationCap} \cvevent{Licenciatura en Inform\'atica}{University of Guadalajara. M\'exico}{August 2008 -- January 2013}{}
+
+\cvsection{Technologies}
+\cvskill{Python}{5}
+\cvskill{C / C++}{4.5}
+\cvskill{Bash}{4}
+\cvskill{HTML / CSS / JavaScript}{3}
+\cvskill{x86-64 Assembly}{2}
+\divider
+\cvskill{git, version control}{5}
+\cvskill{django}{4.5}
+\cvskill{gh-pages, gh-actions}{4}
+\cvskill{unittest, coverage}{4}
+\divider
+\cvskill{Tensorflow / Keras}{5}
+\cvskill{pandas, numpy, seaborn}{4.5}
+\cvskill{pytorch, sklearn}{3}
+\divider
+\cvskill{music21, mido}{5}
+\cvskill{MusicXML / MIDI}{5}
+\cvskill{Audio Signal Processing}{3}
+
+\cvsection{Awards}
+\cvachievement{\faUniversity}{Doctoral Research Scholarship}{Fonds de recherche du Québec--Société et culture (FRQSC), 2019-2021}
+\cvachievement{\faGamepad}{Student Project Award: Ear Training Gamification Software}{Centre for Interdisciplinary Research in Music Media and Technology (CIRMMT), 2019}
+\cvachievement{\faMoneyBill}{\emph{INPhINIT} fellowship (declined in favor of McGill's scholarship)}{La Caixa Foundation, 2017}
+\cvachievement{\faLaptopCode}{Best workshop at the Software Professionals Conference (SWPC)}{Intel Corporation, August 2015}
+
+% \cvsection{Languages}
+
+% \cvskill{English}{5}
+% \divider
+
+% \cvskill{Spanish}{4}
+% \divider
+
+% \cvskill{German}{3.5} %% Supports X.5 values.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+% \medskip
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+
+\end{paracol}
+
+
+\end{document}
