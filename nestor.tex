@@ -80,7 +80,7 @@
 %% Use (and optionally edit if necessary) this .cfg if you
 %% want an originally numerical reference style like IEEE
 %% for your publication list
-\input{pubs-num.cfg}
+\input{pubs-num.tex}
 
 %% sample.bib contains your publications
 \addbibresource{nestor.bib}
@@ -137,8 +137,8 @@
 \cvsection{About me}
 \begin{quote}
 I am a computational music theorist with a strong passion for tonal music.
-As a young person, I yearned to learn the basics of music theory.
-Nowadays, I spend my time using technology to democratize the access to music education.
+As a young person, I yearned to access the basics of music theory.
+Nowadays, I spend my time designing technology that will democratize this access for others.
 \end{quote}
 
 \cvsection{Experience}
@@ -146,24 +146,27 @@ Nowadays, I spend my time using technology to democratize the access to music ed
 \cvevent{PhD Casual Research Assistant}{Distributed Digital Music Archives and Libraries Lab}{September 2017 -- Ongoing}{Montr\'eal, Qu\'ebec}
 My research focuses on:
 \begin{itemize}
-    \item The syntax \parencite{napoles_lopez_harmalysis_2020} and automatic computation of Roman numeral analysis \parencite{napoles_lopez_augmentednet_2021}, \textbf{which is the topic of my PhD dissertation}
-    \item Automatic key estimation \parencite{napoles_lopez_key-finding_2019, napoles_lopez_local_2020}
-    \item Evaluation of symbolic music formats \parencite{napoles_lopez_encoding_2018, napoles_lopez_effects_2019}
+    \item The computational modeling~\parencite{napoles_lopez_augmentednet_2021} and digital annotation of Roman numeral analyses~\parencite{napoles_lopez_harmalysis_2020}, \textbf{which is the topic of my PhD dissertation}
+    \item Automatic key estimation \cite{napoles_lopez_key-finding_2019, napoles_lopez_local_2020}
+    \item Encoding and evaluating symbolic music files \parencite{degroot-maggetti_data_2020, napoles_lopez_harmonic_2020, napoles_lopez_encoding_2018, napoles_lopez_effects_2019}
     \item Gamification of musicianship and music theory exercises \parencite{napoles_lopez_-re-myth_2020, napoles_lopez_dandelot_2019}
 \end{itemize}
-As a research assistant for DDMAL, I maintain the django-based \emph{Cantus Ultimus} website, train new hires on version control, and support the cloud infrastructure of the lab within Compute Canada.
+
+Additionally, as a research assistant for DDMAL, I maintain the django-based \emph{Cantus Ultimus} website, train new hires regarding good version control practices, and support the infrastructure of the lab in the ``Arbutus'' cloud, which is part of Compute Canada.
 
 \medskip
 
 \cvevent{MSc Research Assistant}{CompMusic}{November 2016 -- June 2017}{Barcelona, Spain}
-I annotated a dataset of Classical string quartets with \textasciitilde{}5,000 Roman numeral labels. 
-I used the data to evaluate an existing functional harmony algorithm named \emph{Melisma Music Analyzer}.
+I participated in a project called \emph{CompMusic}.
+There, I annotated a dataset of Classical string quartets with \textasciitilde{}5,000 Roman numeral labels. 
+I used this data to evaluate \emph{Melisma}, a complex algorithm for music analysis developed by Temperley and Sleator.
+The work in this research assistantship became the bulk of my Masters thesis.
 
 \medskip
 
 \cvevent{Graphics Software Security Engineer}{Intel Corporation}{October 2014 -- August 2016}{Guadalajara, M\'exico}
 Tool development and software security analysis of 3D-graphics libraries. 
-I found and disclosed \textasciitilde{}5 medium-and-high security vulnerabilities in graphic libraries through fuzzing and API-library injection. 
+% I found and disclosed \textasciitilde{}5 medium-and-high security vulnerabilities in graphic libraries through fuzzing and API-library injection. 
 In 2015, I co-authored a conference presentation about API-Injection techniques for fuzzing graphics DLLs, in Portland, OR.
 
 \medskip
@@ -177,19 +180,6 @@ I was the main developer of a traffic simulation suite written in C++, Qt, and O
 \cvevent{Software Validation Engineer}{CINVESTAV / Intel Corporation}{August 2013 -- January 2014}{Guadalajara, M\'exico}
 Writing scripts and software tools (mostly in Python and Bash) for the automatic validation of software and hardware components.
 
-% \cvsection{A Day of My Life}
-
-% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% % \wheelchart{outer radius}{inner radius}{
-% % comma-separated list of value/text width/color/detail}
-% \wheelchart{1.5cm}{0.5cm}{%
-%   6/8em/accent!30/{Sleep,\\beautiful sleep},
-%   3/8em/accent!40/Hopeful novelist by night,
-%   8/8em/accent!60/Daytime job,
-%   2/10em/accent/Sports and relaxation,
-%   5/6em/accent!20/Spending time with family
-% }
-
 % use ONLY \newpage if you want to force a page break for
 % ONLY the current column
 % \newpage
@@ -198,9 +188,6 @@ Writing scripts and software tools (mostly in Python and Bash) for the automatic
 
 \nocite{*}
 
-\printbibliography[heading=pubtype,title={\printinfo{\faUserGraduate}{Thesis}},keyword=mypublications\_thesis]
-
-% \divider
 
 \printbibliography[heading=pubtype,title={\printinfo{\faBookOpen}{Peer-Reviewed Conference with Proceedings}},keyword=mypublications\_proceedings]
 
@@ -208,6 +195,9 @@ Writing scripts and software tools (mostly in Python and Bash) for the automatic
 
 \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Peer-Reviewed Conference without Proceedings}},keyword=mypublications\_noproceedings]
 
+% \divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faUserGraduate}{Thesis}},keyword=mypublications\_thesis]
 
 %% Switch to the right column. This will now automatically move to the second
 %% page if the content is too long.
@@ -216,6 +206,7 @@ Writing scripts and software tools (mostly in Python and Bash) for the automatic
 \cvsection{Education}
 {\faGraduationCap} \cvevent{PhD in Music Technology}{McGill University. Montr\'eal, Qu\'ebec}{September 2017 -- Ongoing}{}
 Provisional thesis title: \emph{Multitask tonal analysis in symbolic music representations}
+
 \medskip
 
 {\faGraduationCap} \cvevent{MSc in Sound and Music Computing}{Universitat Pompeu Fabra. Barcelona, Spain}{September 2016 -- September 2017}{}
@@ -228,25 +219,67 @@ Thesis: \emph{Automatic Harmonic Analysis of Classical String Quartets from Symb
 
 {\faGraduationCap} \cvevent{Licenciatura en Inform\'atica}{University of Guadalajara. M\'exico}{August 2008 -- January 2013}{}
 
-\cvsection{Technologies}
+\cvsection{Skills}
 \cvskill{Python}{5}
 \cvskill{C / C++}{4.5}
 \cvskill{Bash}{4}
-\cvskill{HTML / CSS / JavaScript}{3}
-\cvskill{x86-64 Assembly}{2}
-\divider
-\cvskill{git, version control}{5}
-\cvskill{django}{4.5}
-\cvskill{gh-pages, gh-actions}{4}
-\cvskill{unittest, coverage}{4}
+\cvskill{HTML / CSS / JavaScript}{3.5}
+\cvskill{x86-64 Assembly}{2.5}
 \divider
 \cvskill{Tensorflow / Keras}{5}
 \cvskill{pandas, numpy, seaborn}{4.5}
 \cvskill{pytorch, sklearn}{3}
 \divider
+\cvskill{git, version control}{5}
+\cvskill{django}{4.5}
+\cvskill{gh-pages, gh-actions}{4}
+\cvskill{unittest, coverage}{4}
+\cvskill{devops}{3.5}
+\divider
 \cvskill{music21, mido}{5}
 \cvskill{MusicXML / MIDI}{5}
 \cvskill{Audio Signal Processing}{3}
+\divider
+\cvskill{Delivering presentations}{5}
+\cvskill{Collaboration}{4.5}
+\cvskill{Teaching}{4}
+\cvskill{People management}{2.5}
+
+
+\cvsection{Interests}
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+\wheelchart{0.5cm}{1cm}{%
+  9/4em/accent!80/Research,
+  8/4em/accent!70/Music theory,
+  7/4em/accent!60/Machine learning,
+  6/4em/accent!50/Coding,
+  3/8em/accent!20/Game development
+}
+
+\cvsection{Teaching}
+
+{\faVolumeUp} \cvevent{MUMT 301}{McGill University. Montr\'eal, Qu\'ebec}{Fall 2020, Fall 2021}{}
+Co-lecturer of the course ``MUMT 301: Music and the Internet'', which is taught to undergrad students of the Musical Applications of Technology (MAT) and Musical Science & Technology (MST) minors at McGill.
+
+The course briefly touches on HTML, CSS, and JavaScript development, the history of the Internet (from the creation of ARPA, to the invention of the Web browser), network protocols, JavaScript-based sound generation, and digital symbolic-and-audio formats for music representation.
+
+\medskip
+
+{\faHandsHelping} \cvevent{WiMIR Mentor}{Women in Music Information Retrieval (WiMIR)}{2019, 2020}{}
+
+I have volunteered twice as a mentor for the WiMIR initiative.
+Through this project, I have met two amazing students who are interested in the Music Information Retrieval (MIR) field.
+In both occasions, we set biweekly meetings to discuss academic life, papers, and possible research directions they might pursue. 
+
+\cvsection{Languages}
+\cvskill{Spanish}{5}
+\cvskill{English}{4.5}
+\cvskill{French}{2.5}
+\cvskill{Polish}{1}
+
 
 \cvsection{Awards}
 \cvachievement{\faUniversity}{Doctoral Research Scholarship}{Fonds de recherche du Québec--Société et culture (FRQSC), 2019-2021}
